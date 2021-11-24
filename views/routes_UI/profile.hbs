@@ -1,0 +1,142 @@
+
+{{#if error_message}}
+<br>
+<div class="alert alert-danger">
+{{error_message}}
+</div>
+{{/if}}
+
+<br>
+<div class="row" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown;">
+  
+<div class="col-md-3"></div>
+ 
+<div class="col-md-6">
+  <br><br>
+  <h1 style="background-color: cornsilk; font-size:xx-large; color: brown"><center><b>Welcome To Our Food Ordering Application</b></h1>
+  <br> <br>
+  <div style="background-color: khaki;"><center>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3CynzwqgL6s6yFv0PczrXgOfcZoFpwdsIR3xx6N42LOZjbYxJeUA0QzUGiAUeVwuShhw&usqp=CAU" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6cHIS_JzT1hSDy9MfV_t9Ilejamwf0iILW7hkXg-yidbEVaOVoqBgMTgIYyn27-ivEU&usqp=CAU" width="400px" height="400px">
+    <img src="https://envato-shoebox-0.imgix.net/2102/f378-cf84-46c3-9db0-23bc5355eb73/P4160226.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=adc374fbb94a4776677916cfea6a7590" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlGaVdXLzua60lgRBcRltXqyFq9FqJJ1O0Q&usqp=CAU" width="400px" height="400px">
+    <img src="https://us.123rf.com/450wm/indianfoodimages/indianfoodimages1906/indianfoodimages190602207/125859715-indian-hindu-veg-thali-food-platter-selective-focus.jpg?ver=6" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvEO2u5s4K6uSRSA40hdKfrpLrkuXX8QF_Q&usqp=CAU" width="400px" height="400px">
+</center></div>
+<br> <br>
+  <h2 style="background-color: cornsilk; font-size:xx-large; color: brown"><center><b>{{user.username}}</b></center></h2>
+  <br><br>
+  <h2 style="background-color: cornsilk; font-size:xx-large; color: brown"><center><b>My Orders</b></center></h2>
+  <br> <br>     
+    
+{{#if orders}}
+{{#each orders}}
+
+<div class="card">
+   
+  <div class="card-body" style="background-color: khaki; font-size:xx-large; color: brown">
+    {{#each order.itemsArray}}
+      
+      <ul class="list-group" style="background-color: cornsilk; font-size:xx-large; color: brown"> 
+      <li class="list-group-item" style="background-color: skyblue; font-size:xx-large; color: brown">
+      <span style="background-color: skyblue; font-size:xx-large; color: brown; font-weight:bold">{{item.title}} : </span>
+       &ensp;
+      <span class="badge badge-success" style="background-color: cornsilk; font-size:xx-large; color: brown">Rs. {{item.price}} Per {{item.title}} </span>   
+       &ensp;&ensp;
+      <span  class="badge badge-secondary badge-pill" style="background-color: khaki; float:right; font-size:xx-large; color: brown">{{qty}}</span> 
+      </li> 
+      </ul>
+      
+    {{/each}}  
+  </div>
+    
+  <div class="card-footer text-muted" style="background-color: khaki; font-weight:bold; font-size:xx-large; color: brown">
+ <p class="btn btn-success" style="font-size: xx-large; font-weight:bold">Payment ID:&nbsp; <span style="background-color: cornsilk; font-size:xx-large; color: brown; font-weight:bold">{{paymentId}}</span></p> <br>
+ <p class="btn btn-success" style="font-size: xx-large; font-weight:bold">Total Amount:&nbsp; <span style="background-color: cornsilk; font-size:xx-large; color: brown; font-weight:bold">Rs. {{order.totalPrice}}</span></p> 
+    
+  </div>
+    
+</div>
+<br>
+
+{{/each}}
+
+{{else}}  
+<br><br><br><br>
+  <h3  style="background-color: cornsilk; font-size:xx-large; color: brown" class="text-center"><b>No Food Items has been ordered yet. Kindly explore it to order now.</b></h3>
+{{/if}}       
+        <br><br><br><br>
+</div>
+
+ 
+<div class="col-md-3"></div>
+</div>
+<br><br><br><br>
+<div>
+  <a class="dropdown-item" href="/" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown"><b><center>Home Page</center></b></a>
+          <div class="dropdown-divider"></div>
+</div>
+<br><br>
+<div>
+<a class="dropdown-item"  href="/logout" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown"><b><center>Log Out</center></b></a>
+          <div class="dropdown-divider"></div>
+
+</div>
+ <br> <br>
+<div style="background-color: khaki;"><center>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3CynzwqgL6s6yFv0PczrXgOfcZoFpwdsIR3xx6N42LOZjbYxJeUA0QzUGiAUeVwuShhw&usqp=CAU" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6cHIS_JzT1hSDy9MfV_t9Ilejamwf0iILW7hkXg-yidbEVaOVoqBgMTgIYyn27-ivEU&usqp=CAU" width="400px" height="400px">
+    <img src="https://envato-shoebox-0.imgix.net/2102/f378-cf84-46c3-9db0-23bc5355eb73/P4160226.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=adc374fbb94a4776677916cfea6a7590" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlGaVdXLzua60lgRBcRltXqyFq9FqJJ1O0Q&usqp=CAU" width="400px" height="400px">
+    <img src="https://us.123rf.com/450wm/indianfoodimages/indianfoodimages1906/indianfoodimages190602207/125859715-indian-hindu-veg-thali-food-platter-selective-focus.jpg?ver=6" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvEO2u5s4K6uSRSA40hdKfrpLrkuXX8QF_Q&usqp=CAU" width="400px" height="400px">
+</center></div>
+ <br> <br>
+
+
+
+
+
+
+<!--
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <br>
+    <h2><u>My orders</u></h2><br>
+    
+{{#if orders}}  
+{{#each orders}}
+<ul class="list-group"> 
+      
+{{#each order.itemsArray}}
+  <li class="list-group-item">
+  <span style="font-weight:bold">{{item.title}}</span>
+   &ensp;
+  <span class="badge badge-success">${{item.price}} each</span>   
+   &ensp;&ensp;
+       
+  <span style="float:right" class="badge badge-secondary badge-pill">{{qty}}</span> 
+  </li> 
+{{/each}}
+      
+  <br>
+  <h5>Total Amount: ${{order.totalPrice}}</h5> 
+  <h6>Payment ID: <span class="badge badge-success">{{paymentId}}</span></h6> 
+
+  
+    
+  </ul>
+  <hr>
+  <br>
+    
+{{/each}}
+{{else}}
+    
+    <h4 algn="center">No items</h4>
+{{/if}}
+  
+</div>
+<div class="col-md-4"></div>
+</div>
+-->

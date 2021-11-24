@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+  
+  <a class="navbar-brand" href="#" style="background-color: cornsilk; font-size:xx-large; color: brown"><b>Food Ordering Application</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: rgb(0, 255, 157);">
+    <ul class="navbar-nav my-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown">&nbsp;&nbsp;&nbsp;&nbsp;<b>Home</b></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cart" style="background-color: gray; font-size:xx-large; color: cornsilk"><i class="fa fa-shopping-cart"></i>&nbsp;&nbsp;&nbsp;&nbsp;<b>Cart </b>
+        <span class="badge badge-secondary badge-pill">{{session.cart.totalQty}} </span> 
+        </a> 
+      </li>
+        
+      {{#if user}}
+        
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="background-color: cornsilk; font-size:xx-large; color: brown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+          <b>{{user.username}}</b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: gray; font-size:x-large; color: red">
+            <a class="dropdown-item" href="/profile" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown"><b>My Profile</b></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item"  href="/logout" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown"><b>Log Out</b></a>
+          <div class="dropdown-divider"></div>
+        
+          {{!-- <a class="dropdown-item" href="#">Something else here</a> --}}
+        </div>
+      </li>
+        
+        {{else}}
+        
+      <li class="nav-item dropdown" style="background-color: cornsilk; font-size:x-large; color: red" >
+        <a class="nav-link dropdown-toggle" style="background-color: cornsilk; font-size:xx-large; color: brown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user"></i>&nbsp;
+         &nbsp; <b>Sign Up/Log In</b>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: gray; font-size:xx-large; color: red">
+          <a class="dropdown-item" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown" href="/signup"><b>Sign Up</b></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown" href="/login"><b>Log In</b></a>
+          <div class="dropdown-divider"></div>
+          
+          {{!-- <a class="dropdown-item" href="#">Something else here</a> --}}
+        </div>
+      </li>
+        
+        {{/if}}  
+        
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<div style="background-color: khaki;"><center>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3CynzwqgL6s6yFv0PczrXgOfcZoFpwdsIR3xx6N42LOZjbYxJeUA0QzUGiAUeVwuShhw&usqp=CAU" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6cHIS_JzT1hSDy9MfV_t9Ilejamwf0iILW7hkXg-yidbEVaOVoqBgMTgIYyn27-ivEU&usqp=CAU" width="400px" height="400px">
+    <img src="https://envato-shoebox-0.imgix.net/2102/f378-cf84-46c3-9db0-23bc5355eb73/P4160226.jpg?auto=compress%2Cformat&fit=max&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&markalign=center%2Cmiddle&markalpha=18&w=1600&s=adc374fbb94a4776677916cfea6a7590" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlGaVdXLzua60lgRBcRltXqyFq9FqJJ1O0Q&usqp=CAU" width="400px" height="400px">
+    <img src="https://us.123rf.com/450wm/indianfoodimages/indianfoodimages1906/indianfoodimages190602207/125859715-indian-hindu-veg-thali-food-platter-selective-focus.jpg?ver=6" width="400px" height="400px">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvEO2u5s4K6uSRSA40hdKfrpLrkuXX8QF_Q&usqp=CAU" width="400px" height="400px">
+</center></div>
+<br>
+<br>

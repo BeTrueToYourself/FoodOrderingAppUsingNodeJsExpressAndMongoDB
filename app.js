@@ -52,7 +52,7 @@ app.use(cookieParser());
 //session-middleware
 app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: 'ak5594137@gmail.com',
+  secret: 'kumarashwani1101@gmail.com',
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({mongooseConnection: mongoose.connection}), 

@@ -20,10 +20,11 @@
 </div>
 {{/if}}
 
-
+<div><h1 style="color: brown; background-color:rgb(0, 255, 157); font-weight:bold"><b><marquee behavior="alternate" direction="left">Welcome To The Food Ordering Application....!!!! We Specialize In Awesome Food....!!!! Exclusive Food....Priceless Taste....!!!! We Specialize In The Times Of Making Food....!!!! Presenting  Aesthetic Food....!!!! Count Memories, Not Calories....!!!! Turning The Ordinary Food Into Extraordinary One....!!!! Spreading Love Through Food....!!!! Hunger Makes You A Good Cook....!!!! A little Slice of Heaven....!!!! Good Food Never Fail In Bringing People Together....!!!!     </marquee></b></h1></div>
 {{#each productChunks}}
 <div class="row">
 {{#each this}}
+
 <div class="col-sm-6 col-md-3" style="background-color: salmon;">
 <div class="card" style="width:30rem;" >
   <img style="padding:10px" height="500px" width="500px" class="card-img-top" src={{imagePath}}>
@@ -34,7 +35,7 @@
       
   <form action="/add-to-cart/{{_id}}?_method=PUT" method="post" enctype="multipart/form-data">
   <div class="form-group">
-      <button style="color: brown; background-color:rgb(0, 255, 157); font-size:xx-large; font-weight:bold; float:right;" type="submit" class="btn btn-success" style="cursor:pointer">Add To Cart</button>
+      <button style="color: brown; background-color:rgb(0, 255, 157); font-size:xx-large; font-weight:bold; float:right;" type="submit" class="btn btn-success" style="cursor:pointer"><b>Add To Cart</b></button>
   </div>
   </form>
           

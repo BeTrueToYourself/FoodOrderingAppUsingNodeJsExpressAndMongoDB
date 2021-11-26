@@ -32,6 +32,6 @@
     "passport-local": "^1.0.0",
     "stripe": "^6.19.0"
   },
-  "author": "DEEPAK",
+  "author": "Ashwani Kumar",
   "license": "ISC"
 }

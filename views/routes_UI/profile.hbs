@@ -53,7 +53,6 @@
 {{/if}}       
         <br><br><br><br>
 </div>
-
 <div class="col-md-3"></div>
 </div>
 <br><br><br><br>
@@ -81,12 +80,10 @@
 <div class="col-md-4"></div>
 <div class="col-md-4">
     <br>
-    <h2><u>My orders</u></h2><br>
- 
+    <h2><u>My orders</u></h2><br> 
 {{#if orders}}  
 {{#each orders}}
-<ul class="list-group"> 
-      
+<ul class="list-group">      
 {{#each order.itemsArray}}
   <li class="list-group-item">
   <span style="font-weight:bold">{{item.title}}</span>

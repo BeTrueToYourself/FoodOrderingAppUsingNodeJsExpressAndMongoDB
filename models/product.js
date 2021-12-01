@@ -1,6 +1,5 @@
 const mongoose= require ('mongoose');
 const Schema= mongoose.Schema;
-
 const productSchema= new mongoose.Schema({
     imagePath:{
         type:String,
@@ -19,7 +18,5 @@ const productSchema= new mongoose.Schema({
         required:true
     }
 })
-
 const Product= mongoose.model('Product',productSchema);
-
 module.exports={Product};

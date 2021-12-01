@@ -1,6 +1,5 @@
 const mongoose= require ('mongoose');
 const Schema= mongoose.Schema;
-
 const orderSchema= new mongoose.Schema({
     userEmail:{
         type:String,
@@ -23,7 +22,5 @@ const orderSchema= new mongoose.Schema({
         required:true
     }
 })
-
 const Order= mongoose.model('Order',orderSchema);
-
 module.exports={Order};

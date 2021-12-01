@@ -1,7 +1,5 @@
 Stripe.setPublishableKey('pk_test_N8PMM0mj5KgVyEMi7LubEii4');
-
 var $form= $('#checkout-form');
-
 $form.submit(function(){
     $form.find('button').prop('disabled', true);
     Stripe.card.createToken({
@@ -15,7 +13,6 @@ $form.submit(function(){
 })
 
 function stripeResponseHandler(status, response) {
-    
   if (response.error) {   
     $('#charge-error').text(response.error.message);
     $('#charge-error').removeClass('invisible');

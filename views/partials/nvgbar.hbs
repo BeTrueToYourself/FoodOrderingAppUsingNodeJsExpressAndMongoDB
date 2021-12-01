@@ -1,10 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-  
   <a class="navbar-brand" href="#" style="background-color: cornsilk; font-size:xx-large; color: brown"><b>Food Ordering Application</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: rgb(0, 255, 157);">
     <ul class="navbar-nav my-auto">
       <li class="nav-item">
@@ -15,9 +13,7 @@
         <span class="badge badge-secondary badge-pill">{{session.cart.totalQty}} </span> 
         </a> 
       </li>
-        
       {{#if user}}
-        
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="background-color: cornsilk; font-size:xx-large; color: brown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>&nbsp;&nbsp;&nbsp;&nbsp;
           <b>{{user.username}}</b>
@@ -27,13 +23,9 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item"  href="/logout" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown"><b>Log Out</b></a>
           <div class="dropdown-divider"></div>
-        
-          {{!-- <a class="dropdown-item" href="#">Something else here</a> --}}
         </div>
       </li>
-        
         {{else}}
-        
       <li class="nav-item dropdown" style="background-color: cornsilk; font-size:x-large; color: red" >
         <a class="nav-link dropdown-toggle" style="background-color: cornsilk; font-size:xx-large; color: brown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="fa fa-user"></i>&nbsp;
          &nbsp; <b>Sign Up/Log In</b>
@@ -43,11 +35,8 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" style="background-color: rgb(0, 255, 157); font-size:xx-large; color: brown" href="/login"><b>Log In</b></a>
           <div class="dropdown-divider"></div>
-          
-          {{!-- <a class="dropdown-item" href="#">Something else here</a> --}}
         </div>
       </li>
-        
         {{/if}}  
         
     </ul>

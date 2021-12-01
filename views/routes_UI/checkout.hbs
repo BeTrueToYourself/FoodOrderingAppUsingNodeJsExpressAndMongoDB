@@ -9,15 +9,12 @@
         <br>
         <br>
         <h4 style="background-color: cornsilk; font-size:xx-large; color: brown; font-weight:bold"><center>Your Total Amount : Rs. {{totalPrice}}</center></h4>
-        
         {{#if error_message}}
         <div class="alert alert-danger">
         {{error_message}}
         </div>
         {{/if}}
-        
         <div id="charge-error" class="alert alert-danger invisible"></div>
-        
         <form action="/checkout" method="post" id="checkout-form" style="background-color: rgb(0, 255, 157);  font-size:xx-large; color: rgb(0, 255, 157);" >  
             <div class="form-group">
                 <input placeholder="Name e.g :- Ashwani Kumar" type="text" id="name" class="form-control" required name="name" type="text" id="card-cvc" class="form-control" required name="card-cvc" style="color: rgb(90, 85, 85); background-color:khaki; font-size:x-large; font-weight:bold;">
@@ -34,16 +31,13 @@
             <div class="form-group">
                 <input placeholder="Credit Card Number (Note :- Only 16 Digit Valid Card Number)" type="num" id="card-number" class="form-control" required name="card-number" type="text" id="card-cvc" class="form-control" required name="card-cvc" style="color: rgb(90, 85, 85); background-color:khaki; font-size:x-large; font-weight:bold;">
             </div>
-           
-                    <div class="form-group">
+    <div class="form-group">
                         <input placeholder="Expiration Month e.g:- 11 (Note :- Only 01 to 12 is the Range)" type="num" id="card-expiry-month" class="form-control" required name="card-expiry-month" type="text" id="card-cvc" class="form-control" required name="card-cvc" style="color: rgb(90, 85, 85); background-color:khaki; font-size:x-large; font-weight:bold;">
                     </div>
-              
-                
                     <div class="form-group" >
                         <input placeholder="Expiration Year e.g:- 2021" type="num" id="card-expiry-year" class="form-control" required name="card-expiry-year" type="text" id="card-cvc" class="form-control" required name="card-cvc" style="color: rgb(90, 85, 85); background-color:khaki; font-size:x-large; font-weight:bold;">
                     </div>
-              
+
             <div class="form-group" >
                 <input placeholder="CVV Number e.g:- 675" type="num" id="card-cvc" class="form-control" required name="card-cvc" style="color: rgb(90, 85, 85); background-color:khaki; font-size:x-large; font-weight:bold;">
             </div>
@@ -54,7 +48,7 @@
     <div class="col-md-4"></div>
 <!--    <div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3"></div>-->
 </div>
-<br> <br>
+<br><br>
 <div style="background-color: khaki;"><center>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3CynzwqgL6s6yFv0PczrXgOfcZoFpwdsIR3xx6N42LOZjbYxJeUA0QzUGiAUeVwuShhw&usqp=CAU" width="400px" height="400px">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6cHIS_JzT1hSDy9MfV_t9Ilejamwf0iILW7hkXg-yidbEVaOVoqBgMTgIYyn27-ivEU&usqp=CAU" width="400px" height="400px">
@@ -63,6 +57,5 @@
     <img src="https://us.123rf.com/450wm/indianfoodimages/indianfoodimages1906/indianfoodimages190602207/125859715-indian-hindu-veg-thali-food-platter-selective-focus.jpg?ver=6" width="400px" height="400px">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwvEO2u5s4K6uSRSA40hdKfrpLrkuXX8QF_Q&usqp=CAU" width="400px" height="400px">
 </center></div> <br> <br>
-
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript" src="javascript/checkout.js"></script>

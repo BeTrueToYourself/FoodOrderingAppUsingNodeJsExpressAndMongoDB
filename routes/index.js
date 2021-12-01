@@ -52,25 +52,20 @@ router.get('/signup',isLoggedout,(req,res,next)=> {
 })
 
 router.get('/login',isLoggedout,(req,res,next)=> {
- 
     res.render('routes_UI/login');
 })
 
 router.get('/profile',isLoggedin,(req,res,next)=> {
- 
-    Order.find({userEmail:req.user.email}).then((orders)=> {
-        
+    Order.find({userEmail:req.user.email}).then((orders)=> {   
         console.log(orders);
         res.render('routes_UI/profile',{user:req.user, orders:orders});
     })
 })
 router.get('/reduce/:id',(req,res)=> {
-    
     let cart= new Cart(req.session.cart ? req.session.cart : {} );
     cart.reduceByOne(req.params.id);
     cart.generateArray();
     req.session.cart= cart;
-    
     if(req.isAuthenticated()){ 
         User.findOne({email:req.user.email}).then((user)=> {
             user.cart= cart;  
@@ -82,12 +77,10 @@ router.get('/reduce/:id',(req,res)=> {
     res.redirect('/cart');    
 })
 router.get('/removeItem/:id',(req,res)=> {
-    
     let cart= new Cart(req.session.cart ? req.session.cart : {} );
     cart.removeItem(req.params.id);
     cart.generateArray();
     req.session.cart= cart;
-    
     if(req.isAuthenticated()){ 
         User.findOne({email:req.user.email}).then((user)=> {
             user.cart= cart;  
@@ -99,9 +92,7 @@ router.get('/removeItem/:id',(req,res)=> {
     res.redirect('/cart');    
 })
 router.put('/add-to-cart/:id',(req,res,next)=> {
-
-    let cart= new Cart(req.session.cart ? req.session.cart : {} );
-    
+    let cart= new Cart(req.session.cart ? req.session.cart : {} );    
     Product.findById(req.params.id).then((product)=> {
         cart.add(product, product.id);
         cart.generateArray();
@@ -180,24 +171,18 @@ router.post('/checkout',(req,res)=> {
 })
                            
 router.get('/',(req, res)=> {
-    
     let success_message= req.flash('success_message');
-
     Product.find().then((products)=> {
-        
         let productChunks=[];
         const chunkSize= 4;
         for(let i=0; i<products.length; i +=chunkSize){
             productChunks.push(products.slice(i, i+chunkSize));
         }
-        
         if(req.isAuthenticated()){     
             User.findOne({email:req.user.email}).then((user)=> {
-                
                 let x= JSON.stringify(req.session.cart);
                 let y= JSON.stringify(user.cart);
-                let z= (x !== y);
-                
+                let z= (x !== y);  
                 console.log(user.cart);
                 console.log(req.session.cart);
                 if(req.session.cart && z){
@@ -207,9 +192,7 @@ router.get('/',(req, res)=> {
                     cart.add2(req.session.cart);
                     cart.generateArray();
                     req.session.cart= cart;
-                    user.cart= cart;
-                    
-                    
+                    user.cart= cart;                   
                 }else{
                     req.session.cart=user.cart;
                 }   
@@ -219,16 +202,13 @@ router.get('/',(req, res)=> {
                 })     
             })          
         }
-        
         else{
             res.render('routes_UI/index', {productChunks});
-        }
-        
+        }       
     })
 });
 
 router.get('/logout',isLoggedin_4_logout,(req, res)=>{
- 
     req.session.destroy();
     req.logout();
     res.redirect('/login');
@@ -236,12 +216,10 @@ router.get('/logout',isLoggedin_4_logout,(req, res)=>{
 });
 
 router.post('/signup',(req,res)=> {
-       
     if(req.body.password!==req.body.confirmPassword){
         req.flash('error_message',`Passwords do not match`);
         res.redirect('/signup');
     }else{
-        
         User.findOne({ email: req.body.email}).then((user)=> {
             if(user){
                req.flash('error_message',`A user with this email already exists`);
@@ -269,15 +247,11 @@ router.post('/signup',(req,res)=> {
 
 passport.use(new LocalStrategy({usernameField: 'email'},
   (email, password, done)=> {
-    
     User.findOne({email:email}).then((user)=> {
-        
       if (!user) {
         return done(null, false);
       }
-        
         bcrypt.compare(password, user.password,(err, matched)=> {
-            
                 if(matched){
                     return done(null, user);
                 }
@@ -359,8 +333,7 @@ const products= [
     
 ]
 
-for(let i=0; i < products.length; i++){
-    
+for(let i=0; i < products.length; i++){   
     Product.find().then((productss)=> {
         let count= 0;
         for(let j=0; j< productss.length; j++){
@@ -372,6 +345,5 @@ for(let i=0; i < products.length; i++){
             products[i].save();
         }
     })
-    
 }
 module.exports = router;
